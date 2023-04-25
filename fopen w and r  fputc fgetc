@@ -1,0 +1,20 @@
+int main()
+{
+	//文件操作
+	FILE* f = fopen("test.txt", "w");//如果没有test文件，则会创建一个test文件  如果有文件，会覆盖掉里文件里面的所有内容。
+	if (f == NULL)
+		printf("%s\n", strerror(errno));
+	fputc('l', f);//写文件
+	fputc('q',f);
+	fputc('x',f);
+	fclose(f);
+	f = NULL;
+	FILE* f1 =fopen("test.txt", "r");
+	//读文件 
+	printf("%c",fgetc(f1));
+	printf("%c", fgetc(f1));
+	printf("%c", fgetc(f1));
+	fclose(f1);
+	f1 = NULL;
+	return 0;
+}
