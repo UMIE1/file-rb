@@ -1,0 +1,9 @@
+int main()
+{
+	FILE* pf = fopen("test.txt", "rb");
+	if (pf == NULL)
+		printf("%s\n", strerror(errno));
+	fseek(pf, 4, SEEK_SET);
+	printf("%c", fgetc(pf));
+	return 0;
+}
