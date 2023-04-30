@@ -1,0 +1,14 @@
+//perror
+int main()
+{
+	FILE* pf = fopen("test2.txt", "rb");
+	if (pf == NULL)
+	{
+		perror("open test2.txt");
+		return 0;
+	}
+	fclose(pf);
+	pf = NULL;
+	
+	return 0;
+}
